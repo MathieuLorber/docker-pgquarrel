@@ -11,7 +11,7 @@ RUN apt-get update \
     && make \
     && make install \
     && rm -rf /tmp/pgquarrel \
-    && apt-get purge -y git cmake make gcc postgresql-server-dev-16.9 \
+    && apt-get purge -y git cmake make gcc postgresql-server-dev-16 \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
