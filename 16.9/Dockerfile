@@ -6,7 +6,7 @@ RUN apt-get update \
         ca-certificates git cmake make gcc libpq-dev postgresql-server-dev-16 \
     && git clone https://github.com/eulerto/pgquarrel.git /tmp/pgquarrel \
     && cd /tmp/pgquarrel \
-    && git checkout pgquarrel_0_7_0 \
+    && git checkout 80637e44afc68fa226aad8fb90b2cab7c24a39c4 \
     && cmake -DCMAKE_INSTALL_PREFIX=/usr/local . \
     && make \
     && make install \

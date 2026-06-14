@@ -32,10 +32,10 @@ mlorber/public:pgquarrel-compare-<pgquarrel-ref>-pg<pg-version>
 
 Examples produced by this repo:
 
-| Subdir   | pgquarrel ref       | Image tag                                        |
-| -------- | ------------------- | ------------------------------------------------ |
-| `18.0/`  | master `80637e4`    | `mlorber/public:pgquarrel-compare-80637e4-pg18.0` |
-| `16.9/`  | tag `pgquarrel_0_7_0` | `mlorber/public:pgquarrel-compare-0_7_0-pg16.9`   |
+| Subdir  | pgquarrel ref    | Image tag                                          |
+| ------- | ---------------- | -------------------------------------------------- |
+| `18.0/` | master `80637e4` | `mlorber/public:pgquarrel-compare-80637e4-pg18.0`  |
+| `16.9/` | master `80637e4` | `mlorber/public:pgquarrel-compare-80637e4-pg16.9`  |
 
 Production code (`DockerPgquarrel.image` in ktts-webapp-sample) always pins to
 one of these immutable tags.
@@ -51,10 +51,6 @@ one of these immutable tags.
   tag is preferable when you want an immutable release as the source of truth.
 
 Pin to a specific SHA either way so the build is reproducible.
-
-> Note: the current `16.9/Dockerfile` uses `pgquarrel_0_7_0` against
-> `postgresql-server-dev-16` — verify it actually builds before pushing
-> (the rule above says master would be the safer pick on PG14+).
 
 ## Version coupling
 
