@@ -11,6 +11,7 @@ environments.
 One sub-directory per PostgreSQL base version:
 
 ```
+16.9/Dockerfile   16.9/push.sh
 18.0/Dockerfile   18.0/push.sh
 ```
 
@@ -34,6 +35,7 @@ Examples produced by this repo:
 | Subdir  | pgquarrel ref    | Image tag                                          |
 | ------- | ---------------- | -------------------------------------------------- |
 | `18.0/` | master `80637e4` | `mlorber/public:pgquarrel-compare-80637e4-pg18.0`  |
+| `16.9/` | master `80637e4` | `mlorber/public:pgquarrel-compare-80637e4-pg16.9`  |
 
 Production code (`DockerPgquarrel.image` in ktts-webapp-sample) always pins to
 one of these immutable tags.
@@ -66,8 +68,8 @@ Two pitfalls aligned, both fixed by the same rule: **the
    > cannot connect to server whose version (X.Y) is greater than postgres
    > version (Z.W) used to compile pgquarrel
 
-   So a `pg18.0` image can connect to PG ≤ 18. Pick the image that covers the
-   *newest* server you need to diff.
+   So a `pg18.0` image can connect to PG ≤ 18; a `pg16.9` image can connect to
+   PG ≤ 16. Pick the image that covers the *newest* server you need to diff.
 
 ## Build & push (multi-arch)
 
